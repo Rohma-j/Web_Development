@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raw-paper-scissor</title>
+    <link rel="stylesheet" href="raw-paper-scissor.css" />
+  </head>
+  <body>
+    <div id="result">message</div>
+    <div id="main">
+            <div id="game">
+      <div class="circle " id="paper">Paper</div>
+      <div class="circle" id="scissor">Scissor</div>
+      <div class="circle" id="rock">Rock</div>
+    </div>
+    <div id="message">
+        <div class="mess" id="compc">Computer choice is:</div>
+        <div class="mess"id="win">Win:0</div>
+        <div class="mess"id="lose">Lose:0</div>
+        <div class="mess"id="draw">Draw:0</div>
+    </div>
+    <div id="acknowleg">
+        <p class="ack">Acknowlegments:</p>
+        Photos by ClickerHappy,Mabel Amber and David Bartus
+    </div>
+    </div>
+    <script src="raw-paper-scissor.js"></script>
+  </body>
+</html>
