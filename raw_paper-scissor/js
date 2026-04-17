@@ -1,0 +1,66 @@
+let userchoice;
+let compchoice;
+let win=0;
+let lose=0;
+let draw=0;
+let textcomp=document.getElementById("compc");
+let wins=document.getElementById("win");
+let loses=document.getElementById("lose");
+let draws=document.getElementById("draw");
+let message=document.getElementById("result");
+let main=document.getElementById("main");
+result=function(userchoice){
+  compchoice = Math.trunc(Math.random() * 3);
+  comptext(compchoice);
+  if(userchoice==compchoice){
+    draw++;
+    message.innerText="Nice try!!";
+  }
+  else if((userchoice+1)%3==compchoice){
+    lose++;
+    message.innerText="OPPSS!!";
+  }
+  else{
+    win++;
+    message.innerText="Congratulation!!";
+    if(win>=10){
+      levelup();
+    }
+  }
+  score(win,lose,draw)
+  update();
+}
+comptext=function(compchoice){
+  let choices=["Paper","Scissor","Rock"];
+  textcomp.innerText=`Computer choice is:${choices[compchoice]}`
+}
+score=function(w,l,d){
+  wins.innerText=`Win:${w}`;
+  loses.innerText=`Lose:${l}`;
+  draws.innerText=`Draw:${d}`;
+}
+update=function(){
+  message.style.zIndex=2;
+   message.style.animation = "fadein 3s ease-in forwards";
+   setTimeout(() => {
+    message.style.zIndex = "-2";
+    message.style.animation = ""; 
+  }, 3000);
+}
+levelup=function(){
+  message.style.backgroundImage = "url('pexels-david-bartus-43782-1166209.jpg')";
+  main.style.backgroundImage = "url('pexels-david-bartus-43782-1166209.jpg')";
+}
+document.getElementById("paper").onclick = function () {
+  userchoice = 0;
+  result(userchoice);
+};
+document.getElementById("scissor").onclick = function () {
+  userchoice = 1;
+  result(userchoice);
+};
+document.getElementById("rock").onclick = function () {
+  userchoice = 2;
+  result(userchoice);
+};
+
